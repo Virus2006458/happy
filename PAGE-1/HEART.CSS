@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  color: white;
+  font-family: 'Itim', cursive;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ Full-screen background image */
+#bodyblur img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* 🐼 GIF styling */
+#ftAwal img {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating effect */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 💖 Heart button */
+#loveIn {
+  margin-top: 10px;
+}
+
+.lovein {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lovein:hover {
+  transform: scale(1.2);
+}
+
+.lovein svg {
+  width: 40px;
+  height: 40px;
+  stroke: pink;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* Texts */
+#tapText {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.9;
+  text-shadow: 0 0 10px pink;
+}
+
+#countdown-box {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 0 10px pink;
+}
+
+/* 🎈 Balloon animation */
+.balloon {
+  position: fixed;
+  bottom: -100px;
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: hsl(var(--hue), 80%, 60%);
+  animation: flyUp 6s linear forwards;
+  z-index: 999;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: #fff;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes flyUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}

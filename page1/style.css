@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1a0020, #000000);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 32px;
+  text-shadow: 0 0 15px #ff7ab8;
+}
+
+.message-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 30px;
+  margin: 30px auto;
+  width: 80%;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.message {
+  font-size: 17px;
+  line-height: 1.7em;
+  text-align: justify;
+  color: #ffe3f3;
+  text-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+.gift-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.gift-btn {
+  font-size: 40px;
+  text-decoration: none;
+  animation: bounce 1.2s infinite;
+  display: inline-block;
+}
+
+.gift-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Balloons */
+.balloons {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: float 7s ease-in infinite, burst 7s ease-in infinite;
+}
+
+.pink { background: #ff99cc; left: 10%; animation-delay: 0s; }
+.blue { background: #66ccff; left: 30%; animation-delay: 1s; }
+.yellow { background: #ffeb3b; left: 60%; animation-delay: 2s; }
+.purple { background: #b266ff; left: 80%; animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) scale(1); opacity: 1; }
+  90% { transform: translateY(-10vh) scale(1.05); }
+  100% { transform: translateY(-15vh) scale(0); opacity: 0; }
+}
+
+@keyframes burst {
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Fireworks canvas covers full background */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}

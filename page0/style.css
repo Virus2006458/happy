@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  position: relative;
+  background: radial-gradient(circle at top, #000000, #1a0020, #30004d);
+}
+
+/* 🌌 Starry background */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
+  opacity: 0.4;
+  animation: moveStars 100s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+/* 💞 Floating background hearts */
+#floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  color: rgba(255, 182, 193, 0.7);
+  font-size: 20px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.6) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  z-index: 5;
+}
+
+.profile img {
+  width: 160px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 28px;
+  text-shadow: 0 0 10px #ff7ab8;
+  margin-bottom: 20px;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 25px 40px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.heart {
+  font-size: 40px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.8s ease, filter 0.3s ease;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ff66cc);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.8s ease;
+}
+
+/* ✨ Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff 0%, #ff66cc 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+  animation: sparkle-fly 0.8s ease-out forwards;
+}
+
+@keyframes sparkle-fly {
+  to {
+    transform: translate(var(--x), var(--y)) scale(0);
+    opacity: 0;
+  }
+}
